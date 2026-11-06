@@ -1,0 +1,265 @@
+/* =========================================
+   IDENTIDADE VISUAL
+   ========================================= */
+:root {
+  --cor-primaria: #7c2d12;
+  --cor-primaria-clara: #c2410c;
+  --cor-fundo: #fef9f4;
+  --cor-texto: #1c1917;
+  --cor-neutro: #78716c;
+  --cor-borda: #e7e5e4;
+  --fonte-titulo: Georgia, "Times New Roman", serif;
+  --fonte-corpo: system-ui, -apple-system, sans-serif;
+  --espaco-md: 16px;
+  --espaco-lg: 24px;
+  --raio: 10px;
+}
+
+/* =========================================
+   RESET
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   ESTRUTURA GERAL — CSS GRID
+   ========================================= */
+body {
+  font-family: var(--fonte-corpo);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   CABEÇALHO — FLEXBOX
+   ========================================= */
+.cabecalho {
+  background: var(--cor-primaria);
+  color: #fff;
+  padding: var(--espaco-lg) var(--espaco-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espaco-md);
+  flex-wrap: wrap;
+}
+
+.cabecalho-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cabecalho h1 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -.5px;
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.selo {
+  background: var(--cor-primaria-clara);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   NAVEGAÇÃO — FLEXBOX
+   ========================================= */
+.navegacao {
+  background: var(--cor-primaria-clara);
+  padding: 12px var(--espaco-md);
+  display: flex;
+  gap: var(--espaco-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navegacao a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.navegacao a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL — GRID
+   ========================================= */
+.conteudo {
+  padding: var(--espaco-lg) var(--espaco-md);
+  display: grid;
+  min-width: 0;
+}
+
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================
+   CARTÃO — FLEXBOX
+   ========================================= */
+.cartao {
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.cartao-imagem {
+  background: #fed7aa;
+  border-radius: var(--raio);
+  padding: 20px 12px;
+  text-align: center;
+  font-weight: 800;
+  color: var(--cor-primaria);
+  font-size: 0.85rem;
+}
+
+.cartao-titulo {
+  font-size: 1.05rem;
+  color: var(--cor-primaria);
+  overflow-wrap: break-word;
+}
+
+.cartao-descricao {
+  font-size: 0.85rem;
+  color: var(--cor-neutro);
+  flex-grow: 1;
+  overflow-wrap: break-word;
+}
+
+.cartao-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.preco {
+  color: var(--cor-primaria-clara);
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.botao {
+  background: var(--cor-primaria);
+  color: #fff;
+  border: 0;
+  padding: 10px 16px;
+  min-height: 44px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.botao:hover {
+  background: var(--cor-primaria-clara);
+}
+
+/* =========================================
+   RODAPÉ — FLEXBOX
+   ========================================= */
+.rodape {
+  background: var(--cor-primaria);
+  color: rgba(255, 255, 255, 0.8);
+  padding: var(--espaco-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espaco-md);
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.rodape-links {
+  display: flex;
+  gap: var(--espaco-md);
+}
+
+.rodape a {
+  color: #fed7aa;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* =========================================
+   MEDIA QUERIES — MUDANÇA REAL DE LAYOUT
+   ========================================= */
+
+/* Tablet: cartões passam de 3 para 2 colunas */
+@media (max-width: 992px) {
+  .grade-produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet/celular: 1 coluna e menu empilhado (verificação do professor aos 768px) */
+@media (max-width: 768px) {
+  .grade-produtos {
+    grid-template-columns: 1fr;
+  }
+
+  .navegacao {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rodape {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
